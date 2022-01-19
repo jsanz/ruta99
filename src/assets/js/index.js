@@ -1,6 +1,6 @@
 import supported from '@mapbox/mapbox-gl-supported';
 
-import { Map, Marker, Popup, NavigationControl, FullscreenControl} from 'maplibre-gl';
+import { Map, Marker, Popup, NavigationControl, FullscreenControl, AttributionControl} from 'maplibre-gl';
 import style from './icv-gris.json';
 import points from './puntos.geo.json';
 
@@ -27,7 +27,7 @@ class InfoToggle {
         this._btn.className = 'maplibregl-ctrl-icon maplibregl-ctrl-info';
         this._btn.type = 'button';
         this._btn['aria-label'] = 'Toggle Info';
-        this._btn.textContent = "ℹ";
+        this._btn.textContent = "📖";
         this._btn.onclick = function() { 
             _this.toggle();
         };
@@ -92,15 +92,21 @@ const loadMap = () => {
             [-5,37], 
             [5,41]
         ],
-        attributionControl: true,
-        style,
-        customAttribution
+        attributionControl: false,
+        style
     });
+
+    // Attribution control
+    map.addControl(new AttributionControl({
+        compact: false,
+        customAttribution
+    }),'bottom-right');
 
     // Navigation control
     map.addControl(new NavigationControl({
         "showCompass": false
     }), 'top-left');
+
     // Full screen control
     map.addControl(new FullscreenControl({
         container: document.querySelector('body')
