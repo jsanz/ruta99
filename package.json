@@ -9,6 +9,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "start": "parcel serve src/index.html",
+    "prebuild": "yarn clean",
     "build": "parcel build src/index.html"
   },
   "devDependencies": {

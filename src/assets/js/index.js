@@ -44,7 +44,7 @@ class InfoToggle {
 }
 
 // Convert a town name into a url slug
-normalizeMunicipalityName = (name) => {
+const normalizeMunicipalityName = (name) => {
     return name
         .toLowerCase()
         .normalize("NFD")
@@ -53,7 +53,7 @@ normalizeMunicipalityName = (name) => {
 };
 
 // Generate markers for each GeoJSON feature
-loadPoints = (map) => {
+const loadPoints = (map) => {
     // add markers to map
     for (const feature of points.features) {
         const name = feature.properties.name ;
@@ -76,7 +76,7 @@ loadPoints = (map) => {
 }
 
 // Creates a map with the ICV style
-loadMap = () => {
+const loadMap = () => {
     // Labels to show on the corner
     const customAttribution = [
         '<a href="https://www.ruta99.gva.es" target="_blank">Ruta 99</a>',
@@ -115,7 +115,6 @@ loadMap = () => {
 document.addEventListener('DOMContentLoaded', function () {
     if (supported.supported()) {
         const map = loadMap();
-
         loadPoints(map);
     } else {
         alert('Browser not supported!');
