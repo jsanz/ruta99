@@ -1,0 +1,10 @@
+# Content for humans
+
+This is a website built with the following tools and technologies:
+
+* Code hosted at https://github.com/jsanz/links
+* Code editor: Visual Studio Code
+* Deployment management: Parcel v2
+* Code engine: Node JS
+* Building tool: Yarn
+* Deployment and hosting: Netlify

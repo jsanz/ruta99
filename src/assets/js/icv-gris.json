@@ -1,0 +1,43 @@
+{
+    "id": "icv-gris",
+    "name": "ICV Gris",
+    "zoom": 6.8,
+    "pitch": 0,
+    "bearing": 0,
+    "center": [
+        -0.01,
+        39.38
+    ],
+    "layers": [
+        {
+            "id": "background",
+            "type": "background",
+            "paint": {
+                "background-color": "#CCC"
+            },
+            "filter": [
+                "all"
+            ],
+            "layout": {
+                "visibility": "visible"
+            },
+            "maxzoom": 24
+        },
+        {
+            "id": "icv-gris",
+            "source": "icv-gris",
+            "type": "raster",
+            "visibility": "visible"
+        }
+    ],
+    "sources": {
+        "icv-gris": {
+            "type": "raster",
+            "tiles": [
+                "https://terramapas.icv.gva.es/mapabase_topografico_grises/wmts/1.0.0/mapabase_topografico_grises/default/GMEPSG3857/{z}/{y}/{x}.png"
+            ],
+            "tileSize": 256
+        }
+    },
+    "version": 8
+}

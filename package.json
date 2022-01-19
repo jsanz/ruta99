@@ -1,0 +1,23 @@
+{
+  "name": "ruta99",
+  "version": "1.0.0",
+  "description": "Un visoret de la ruta 99 de la GVA",
+  "repository": "git@github.com:jsanz/ruta99.git",
+  "author": "jorge@jorgesanz.net",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "clean": "rimraf dist",
+    "start": "parcel serve src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "devDependencies": {
+    "parcel": "^2.2.1",
+    "parcel-reporter-static-files-copy": "^1.3.4",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "@mapbox/mapbox-gl-supported": "^2.0.1",
+    "maplibre-gl": "^2.0.2"
+  }
+}
