@@ -2,7 +2,7 @@
 
 This is a website built with the following tools and technologies:
 
-* Code hosted at https://github.com/jsanz/links
+* Code hosted at https://github.com/jsanz/ruta99
 * Code editor: Visual Studio Code
 * Deployment management: Parcel v2
 * Code engine: Node JS

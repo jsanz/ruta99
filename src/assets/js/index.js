@@ -1,16 +1,12 @@
 import supported from '@mapbox/mapbox-gl-supported';
-
 import { Map, Marker, Popup, NavigationControl, FullscreenControl, AttributionControl} from 'maplibre-gl';
 import style from './icv-gris.json';
 import points from './puntos.geo.json';
 
-
 class InfoToggle {
     constructor() {
         const closeEl = document.querySelector('.details-modal-close svg');
-        closeEl.onclick = () => {
-            this.toggle();
-        }
+        closeEl.onclick = () => { this.toggle(); }
     }
 
     toggle(){
@@ -28,9 +24,7 @@ class InfoToggle {
         this._btn.type = 'button';
         this._btn['aria-label'] = 'Toggle Info';
         this._btn.textContent = "📖";
-        this._btn.onclick = function() { 
-            _this.toggle();
-        };
+        this._btn.onclick = function() { _this.toggle(); };
         this._container = document.createElement('div');
         this._container.className = 'maplibregl-ctrl maplibregl-ctrl-group';
         this._container.appendChild(this._btn);
@@ -65,10 +59,8 @@ const loadPoints = (map) => {
         new Marker(el)
             .setLngLat(feature.geometry.coordinates)
             .setPopup(
-                new Popup({ offset: 25 }) // add popups
-                    .setHTML(
-                        `<h3><a target="_blank" href="${url}">${feature.properties.name}</a></h3>`
-                    )
+                new Popup({ offset: 25 })
+                    .setHTML( `<h3><a target="_blank" href="${url}">${feature.properties.name}</a></h3>` )
             )
             .addTo(map);
     }
